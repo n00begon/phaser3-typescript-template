@@ -1,0 +1,14 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "*.d.ts"
+        ]
+    },
+    "jsRules": {},
+    "rules": {},
+    "rulesDirectory": []
+}

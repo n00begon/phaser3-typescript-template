@@ -6,7 +6,8 @@
     "build:dev": "webpack --env dev",
     "build:prod": "webpack --env prod",
     "start": "webpack-dev-server -d --env dev",
-    "watch": "webpack --env dev --watch"
+    "watch": "webpack --env dev --watch",
+    "test": "jest"
   },
   "repository": {
     "type": "git",

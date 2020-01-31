@@ -1,37 +1,37 @@
-import { config } from '../config/preload';
+import { config } from "../config/preload";
 
 export class Preloader extends Phaser.Scene {
 
-    preload() {
+    public preload() {
 
         // load assets declared in the preload config
         this.loadAtlas();
         this.loadAudio();
     }
 
-    create() {
-        this.scene.start('main');
+    public create() {
+        this.scene.start("main");
     }
 
-    loadAtlas() {
+    public loadAtlas() {
         const sheetPath = config.ssPath;
         const sheets = config.sheets;
 
         this.load.setPath(sheetPath);
 
-        for (let i = 0; i < sheets.length; i++) {
-            this.load.atlas(sheets[i], `${sheets[i]}.png`, `${sheets[i]}.json`);
+        for (const sheet of sheets) {
+            this.load.atlas(sheet, `${sheet}.png`, `${sheet}.json`);
         }
     }
 
-    loadAudio() {
+    private loadAudio() {
         const audioPath = config.audioPath;
         const audioFiles = config.audioFiles;
 
         this.load.setPath(audioPath);
 
-        for (let i = 0; i < audioFiles.length; i++) {
-            this.load.audio(audioFiles[i].key, audioFiles[i].mp3, audioFiles[i].ogg);
+        for (const audioFile of audioFiles) {
+            this.load.audio(audioFile.key, audioFile.mp3, audioFile.ogg);
         }
     }
 }
